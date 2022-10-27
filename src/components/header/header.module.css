@@ -1,0 +1,11 @@
+.header {
+    background: #05ACFF;
+}
+.body {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+}
+.logo {
+    max-width: 40px;
+}

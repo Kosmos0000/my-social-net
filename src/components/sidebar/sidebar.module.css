@@ -1,0 +1,30 @@
+.sidebar {
+
+}
+.body {
+    background: #0378B2;
+    max-width: 150px;
+    min-height: 700px;
+    padding: 15px;
+}
+.text {
+    color: #fff;
+    font-size: 20px;
+    margin: 0 0 15px 0;
+    position: relative;
+    cursor: pointer;
+}
+.text:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: #FF9600;
+    transform: skew(-50deg);
+    transition: all 0.5s ease 0s;
+}
+.text:hover:after {
+    width: 100%;
+}
