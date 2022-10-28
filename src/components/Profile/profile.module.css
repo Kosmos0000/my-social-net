@@ -1,0 +1,29 @@
+.userImage {
+    max-width: 250px;
+    border-radius: 10px;
+}
+.flex {
+    display: flex;
+}
+.userInfo {
+    margin: 0 0 0 15px;
+    color: #fff;
+    font-size: 18px;
+}
+.status {
+    margin: 0 0 20px 0;
+    padding: 5px;
+    background: #02699D;
+    border-radius: 5px;
+}
+.infoItems {
+    margin: 0 0 10px 0;
+}
+.accordItemsBlock {
+    padding: 5px;
+    border-left: 4px solid #024E74;
+    font-size: 16px;
+}
+.infoItemsAccord {
+    margin: 0 0 5px 0;
+}

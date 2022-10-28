@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c1de149-922d-44a4-b462-0477b4e89537" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/header/header.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sidebar/sidebar.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sidebar/sidebar.tsx" afterDir="false" />
+    <list default="true" id="1c1de149-922d-44a4-b462-0477b4e89537" name="Changes" comment="create react-app redux, added header and sidebar">
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/profile.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/profile.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux-toolkit/reducers/profileReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux-toolkit/redux-toolkit.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/sidebar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/sidebar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/sidebar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +40,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/my-social-net/my-social-net",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "nodejs.jest.jest_package": "D:/my-social-net/my-social-net/node_modules/react-scripts",
     "nodejs_package_manager_path": "npm",
     "ts.external.directory.path": "D:\\my-social-net\\my-social-net\\node_modules\\typescript\\lib",
@@ -67,8 +77,17 @@
       <option name="presentableId" value="Default" />
       <updated>1666885404426</updated>
       <workItem from="1666885405692" duration="243000" />
-      <workItem from="1666885660249" duration="4647000" />
+      <workItem from="1666885660249" duration="4866000" />
+      <workItem from="1666955208939" duration="7672000" />
     </task>
+    <task id="LOCAL-00001" summary="create react-app redux, added header and sidebar">
+      <created>1666890549749</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666890549749</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,5 +103,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="create react-app redux, added header and sidebar" />
+    <option name="LAST_COMMIT_MESSAGE" value="create react-app redux, added header and sidebar" />
   </component>
 </project>

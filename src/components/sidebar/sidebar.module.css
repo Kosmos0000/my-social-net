@@ -1,11 +1,9 @@
 .sidebar {
-
-}
-.body {
     background: #0378B2;
-    max-width: 150px;
-    min-height: 700px;
+    flex: 0 1 150px;
+    min-height: 400px;
     padding: 15px;
+    border-right: 4px groove #00AFB2;
 }
 .text {
     color: #fff;

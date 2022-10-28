@@ -1,4 +1,9 @@
-.header {
-    background: #05ACFF;
-    min-height: 50px;
+.main {
+    display: flex;
+}
+.content {
+    padding: 15px;
+    background: #0378B2;
+    min-height: 700px;
+    flex: 1 1 auto;
 }
