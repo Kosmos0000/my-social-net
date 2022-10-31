@@ -1,0 +1,34 @@
+.user {
+    display: flex;
+    margin: 0 0 15px 0;
+}
+
+.photo {
+    max-width: 100px;
+}
+
+.photo img {
+    max-width: 100%;
+}
+
+.name {
+    color: #EEFF00;
+    margin: 0 0 0 15px;
+    line-height: 25px;
+    font-size: 18px;
+}
+.status {
+    color: #FF9600;
+    margin: 0 0 0 15px;
+    font-size: 16px;
+}
+.number {
+    margin: 0 5px;
+    cursor: pointer;
+    color: #7FFF00;
+}
+.numbers {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 15px 0;
+}

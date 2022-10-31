@@ -11,6 +11,8 @@
     margin: 0 0 15px 0;
     position: relative;
     cursor: pointer;
+    display: block;
+    text-decoration: none;
 }
 .text:after {
     content: '';
