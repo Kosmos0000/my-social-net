@@ -1,55 +1,52 @@
 import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
 import {createThunkGetUsers} from "../../redux-toolkit/reducers/usersReducer";
 import userImage from './../../common-images/user.png'
 import style from './users.module.css'
+import {NavLink} from "react-router-dom";
+import Loading from "../common/loading/loading";
+import Search from "../common/search/search";
+import Pagination from "../common/pagination/pagination";
+import {useAppDispatch, useAppSelector} from "../../redux-toolkit/redux-toolkit";
 
 function Users() {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch()
 
+    const usersTotalCount = useAppSelector((state) => state.users.usersTotalCount)
+    const displayedUsersCount = useAppSelector((state) => state.users.displayedUsersCount)
+    const currentPage = useAppSelector((state) => state.users.currentPage)
+    const items = useAppSelector((state) => state.users.items)
+    const isLoading = useAppSelector((state) => state.users.isLoading)
 
 
     useEffect(() => {
-        dispatch(createThunkGetUsers())
+        dispatch(createThunkGetUsers(displayedUsersCount, currentPage))
     }, [])
 
-    const stateUsers = useSelector((state) => state.users)
 
-    const numberOfPages = Math.round(stateUsers.usersTotalCount / stateUsers.dispayedUsersCount)
-
-    const numberOfPagesArray = [];
-
-    if(numberOfPages) {
-        for(let i = 1; i < numberOfPages; i++) {
-            numberOfPagesArray.push(i)
-        }
-    }
-
-    const users = stateUsers.items.map((user) => {
-        return (
+    const users = items.map((user) =>
+        <div key={user.id}>
             <div className={style.user}>
-                <div className={style.photo}>
+                <NavLink to={`../profile/${user.id}`} className={style.photo}>
                     {user.photos.small ?
                         <img src={user.photos.small} alt=""/> :
                         <img src={userImage} alt=""/>
                     }
-                </div>
+                </NavLink>
                 <div>
-                    <div className={style.name}>{user.name}</div>
+                    <NavLink to={`../profile/${user.id}`} className={style.name}>{user.name}</NavLink>
                     <div className={style.status}>{user.status}</div>
                 </div>
             </div>
-        )
-    })
+        </div>
+    )
 
     return (
         <div>
-            <div className={style.numbers}>
-                {
-                    numberOfPagesArray.map((number) => <span className={style.number}>{number}</span>)
-                }
-            </div>
-            <div>{users}</div>
+            <Search/>
+            <Pagination totalCount={usersTotalCount} displayedAmount={displayedUsersCount} currentPage={currentPage}/>
+            {isLoading ? <Loading/> :
+                <div>{users}</div>}
+
         </div>
     );
 }

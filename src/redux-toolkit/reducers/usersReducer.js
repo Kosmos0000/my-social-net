@@ -4,32 +4,71 @@ import {createSlice} from "@reduxjs/toolkit";
 const initialState = {
     items: [],
     usersTotalCount: null,
-    dispayedUsersCount: 10,
-    page: 1
+    displayedUsersCount: 100,
+    currentPage: 1,
+    status: null,
+    profileInfo: {},
+    isLoading: false
 };
 
 export const usersSlice = createSlice({
     name: 'users',
     initialState,
     reducers: {
-        getUsers: (state, action) => {
+        setUsers: (state, action) => {
             state.items = action.payload
         },
-        getTotalUsersCount: (state, action) => {
+        setTotalUsersCount: (state, action) => {
             state.usersTotalCount = action.payload
+        },
+        setCurrentPage: (state, action) => {
+            state.currentPage = action.payload
+        },
+        setStatus: (state, action) => {
+            state.status = action.payload
+        },
+        setProfileInfo: (state, action) => {
+            state.profileInfo = action.payload
+        },
+        isLoading: (state, action) => {
+            state.isLoading = action.payload
         },
     },
 })
 
 
-
-
-export const createThunkGetUsers = () => async (dispatch) => {
-    const users = await API.getUsers()
-    dispatch(getUsers(users.items))
-    dispatch(getTotalUsersCount(users.totalCount))
+export const createThunkGetUsers = (displayedUsersCount, newPage, userName = null) => async (dispatch) => {
+    dispatch(isLoading(true))
+    const users = await API.getUsers(displayedUsersCount, newPage, userName)
+    if (!users.error) {
+        dispatch(setCurrentPage(newPage))
+        dispatch(setUsers(users.items))
+        dispatch(setTotalUsersCount(users.totalCount))
+    }
+    dispatch(isLoading(false))
+}
+export const createThunkGetStatus = (userId) => async (dispatch) => {
+    const status = await API.getStatus(userId)
+    dispatch(setStatus(status))
+}
+export const createThunkSetStatus = (status) => async (dispatch) => {
+    const answer = await API.setStatus(status)
+    answer.resultCode !== 1 && dispatch(setStatus(status))
+}
+export const createThunkGetProfileInfo = (userId) => async (dispatch) => {
+    dispatch(isLoading(true))
+    const profileInfo = await API.getProfileInfo(userId)
+    dispatch(setProfileInfo(profileInfo))
+    dispatch(isLoading(false))
+}
+export const createThunkSendProfileForm = (data, userId) => async (dispatch) => {
+    dispatch(isLoading(true))
+    const resultCode = await API.sendProfileForm(data)
+    dispatch(createThunkGetProfileInfo(userId))
+    dispatch(isLoading(false))
 }
 
-export const {getUsers, getTotalUsersCount} = usersSlice.actions
+
+export const {setUsers, setTotalUsersCount, setCurrentPage, setStatus, setProfileInfo, isLoading} = usersSlice.actions
 
 export default usersSlice.reducer

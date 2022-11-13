@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c1de149-922d-44a4-b462-0477b4e89537" name="Changes" comment="added profile.tsx and install redux-toolkit">
-      <change afterPath="$PROJECT_DIR$/src/api/API.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/users/users.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/users/users.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux-toolkit/reducers/usersReducer.js" afterDir="false" />
+    <list default="true" id="1c1de149-922d-44a4-b462-0477b4e89537" name="Changes" comment="added users">
+      <change afterPath="$PROJECT_DIR$/src/components/common/loading/loading.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/login/login.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/login/login.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/pagination/pagination.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/pagination/pagination.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/search/search.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/status/status.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/status/status.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux-toolkit/reducers/authReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux-toolkit/reducers/searchReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux-toolkit/redux-toolkit.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/profile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sidebar/sidebar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/sidebar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sidebar/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux-toolkit/reducers/profileReducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux-toolkit/redux-toolkit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux-toolkit/redux-toolkit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/API.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux-toolkit/reducers/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux-toolkit/reducers/usersReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux-toolkit/redux-toolkit.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,20 +47,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/my-social-net/my-social-net&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;D:/my-social-net/my-social-net/node_modules/react-scripts&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\my-social-net\\my-social-net\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/my-social-net/my-social-net/src/redux-toolkit/reducers",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs.jest.jest_package": "D:/my-social-net/my-social-net/node_modules/react-scripts",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\my-social-net\\my-social-net\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\my-social-net\my-social-net\src\redux-toolkit\reducers" />
+      <recent name="D:\my-social-net\my-social-net\src\components\common\login" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="renders learn react link" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
@@ -86,7 +102,26 @@
       <workItem from="1667120199185" duration="1687000" />
       <workItem from="1667135179152" duration="4381000" />
       <workItem from="1667213090576" duration="682000" />
-      <workItem from="1667214055092" duration="7520000" />
+      <workItem from="1667214055092" duration="7601000" />
+      <workItem from="1667242223910" duration="3572000" />
+      <workItem from="1667312950128" duration="7499000" />
+      <workItem from="1667324413590" duration="2712000" />
+      <workItem from="1667410145709" duration="4493000" />
+      <workItem from="1667454837957" duration="8284000" />
+      <workItem from="1667575731121" duration="6455000" />
+      <workItem from="1667588847481" duration="2336000" />
+      <workItem from="1667665984437" duration="2987000" />
+      <workItem from="1667753319283" duration="3575000" />
+      <workItem from="1667756950511" duration="4879000" />
+      <workItem from="1667816163913" duration="8959000" />
+      <workItem from="1667928357863" duration="3086000" />
+      <workItem from="1667984641674" duration="2518000" />
+      <workItem from="1667987198865" duration="6548000" />
+      <workItem from="1668000584159" duration="7587000" />
+      <workItem from="1668098862845" duration="6723000" />
+      <workItem from="1668158567734" duration="10841000" />
+      <workItem from="1668272676362" duration="6888000" />
+      <workItem from="1668332944309" duration="2530000" />
     </task>
     <task id="LOCAL-00001" summary="create react-app redux, added header and sidebar">
       <created>1666890549749</created>
@@ -109,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666963405790</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added users">
+      <created>1667222121501</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667222121501</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +171,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create react-app redux, added header and sidebar" />
     <MESSAGE value="added profile.tsx and install redux-toolkit" />
-    <option name="LAST_COMMIT_MESSAGE" value="added profile.tsx and install redux-toolkit" />
+    <MESSAGE value="added users" />
+    <option name="LAST_COMMIT_MESSAGE" value="added users" />
   </component>
 </project>

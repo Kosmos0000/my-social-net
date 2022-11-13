@@ -1,0 +1,16 @@
+.page {
+    margin: 0 5px;
+    cursor: pointer;
+    color: #7FFF00;
+}
+
+.page.active {
+    font-weight: 700;
+    color: #BCFF7A;
+}
+.pages {
+    display: flex;
+    overflow: auto;
+    margin: 0 0 15px 0;
+    max-width: 300px;
+}

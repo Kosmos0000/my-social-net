@@ -1,0 +1,13 @@
+.status {
+    margin: 0 0 20px 0;
+    text-decoration: underline;
+}
+.myStatus {
+    margin: 0 0 20px 0;
+    color: #fff;
+    font-size: 18px;
+    padding: 5px;
+    background: #02699D;
+    border-radius: 5px;
+    cursor: pointer;
+}

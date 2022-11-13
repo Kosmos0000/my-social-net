@@ -1,0 +1,16 @@
+.form {
+    color: #F2D46A;
+}
+.form div {
+    margin: 0 0 15px 0;
+    max-width: 280px;
+    display: flex;
+    justify-content: space-between;
+}
+.form button {
+    font-size: 18px;
+    color: #F2D46A;
+    background: #3C3F41;
+    border: none;
+    padding: 10px;
+}

@@ -22,13 +22,3 @@
     margin: 0 0 0 15px;
     font-size: 16px;
 }
-.number {
-    margin: 0 5px;
-    cursor: pointer;
-    color: #7FFF00;
-}
-.numbers {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 0 15px 0;
-}
