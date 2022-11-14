@@ -37,7 +37,7 @@ export const usersSlice = createSlice({
 })
 
 
-export const createThunkGetUsers = (displayedUsersCount, newPage, userName = null) => async (dispatch) => {
+export const createThunkGetUsers = (displayedUsersCount, newPage, userName) => async (dispatch) => {
     dispatch(isLoading(true))
     const users = await API.getUsers(displayedUsersCount, newPage, userName)
     if (!users.error) {
@@ -63,9 +63,13 @@ export const createThunkGetProfileInfo = (userId) => async (dispatch) => {
 }
 export const createThunkSendProfileForm = (data, userId) => async (dispatch) => {
     dispatch(isLoading(true))
-    const resultCode = await API.sendProfileForm(data)
+    await API.sendProfileForm(data)
     dispatch(createThunkGetProfileInfo(userId))
     dispatch(isLoading(false))
+}
+export const createThunkSetPhoto = (photo, userId) => async (dispatch) => {
+    await API.setPhoto(photo)
+    dispatch(createThunkGetProfileInfo(userId))
 }
 
 

@@ -4,11 +4,9 @@ import {useSelector} from "react-redux";
 import {useAppDispatch, useAppSelector} from "../../../redux-toolkit/redux-toolkit";
 import {createThunkGetUsers, setCurrentPage, setPage} from "../../../redux-toolkit/reducers/usersReducer";
 
-const Pagination = ({totalCount, displayedAmount, currentPage}) => {
+const Pagination = ({totalCount, displayedAmount, currentPage, action, currentStringForSearch}) => {
 
     const dispatch = useAppDispatch()
-
-    const currentStringForSearch = useAppSelector(state => state.search.currentStringForSearch)
 
     const numberOfDisplayedPages = [];
 
@@ -17,7 +15,7 @@ const Pagination = ({totalCount, displayedAmount, currentPage}) => {
     }
 
     const goToAnotherPage = (newPage) => {
-        dispatch(createThunkGetUsers(displayedAmount, newPage, currentStringForSearch))
+        dispatch(action(displayedAmount, newPage, currentStringForSearch))
     }
 
     const pages = numberOfDisplayedPages.map((page) => <span key={page} onClick={() => goToAnotherPage(page)}

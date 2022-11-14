@@ -11,11 +11,14 @@ import {useAppDispatch, useAppSelector} from "../../redux-toolkit/redux-toolkit"
 function Users() {
     const dispatch = useAppDispatch()
 
+
+
     const usersTotalCount = useAppSelector((state) => state.users.usersTotalCount)
     const displayedUsersCount = useAppSelector((state) => state.users.displayedUsersCount)
     const currentPage = useAppSelector((state) => state.users.currentPage)
     const items = useAppSelector((state) => state.users.items)
     const isLoading = useAppSelector((state) => state.users.isLoading)
+    const currentStringForSearch = useAppSelector(state => state.search.currentStringForSearch)
 
 
     useEffect(() => {
@@ -43,7 +46,8 @@ function Users() {
     return (
         <div>
             <Search/>
-            <Pagination totalCount={usersTotalCount} displayedAmount={displayedUsersCount} currentPage={currentPage}/>
+            <Pagination totalCount={usersTotalCount} displayedAmount={displayedUsersCount}
+                        currentPage={currentPage} action={createThunkGetUsers} currentStringForSearch={currentStringForSearch}/>
             {isLoading ? <Loading/> :
                 <div>{users}</div>}
 

@@ -2,7 +2,11 @@ import React, {useEffect, useState} from 'react';
 import userImage from './../../common-images/user.png'
 import style from './profile.module.css'
 import {Navigate, useParams} from "react-router-dom";
-import {createThunkGetProfileInfo, createThunkSendProfileForm} from "../../redux-toolkit/reducers/usersReducer";
+import {
+    createThunkGetProfileInfo,
+    createThunkSendProfileForm,
+    createThunkSetPhoto
+} from "../../redux-toolkit/reducers/usersReducer";
 import Loading from "../common/loading/loading";
 import Status from "../common/status/status";
 import {useAppDispatch, useAppSelector} from "../../redux-toolkit/redux-toolkit";
@@ -13,9 +17,10 @@ function Profile() {
     let params = useParams();
 
     const isAuth = useAppSelector(state => state.auth.data.isAuth)
-
+    const userId = useAppSelector(state => state.auth.data.id)
     const profileInfo = useAppSelector((state) => state.users.profileInfo)
     const isLoading = useAppSelector((state) => state.users.isLoading)
+
 
     const [accordionState, setAccordionState] = useState(false)
     const [editMode, setEditMode] = useState(false)
@@ -30,16 +35,21 @@ function Profile() {
         }
     }, [params])
 
+    const changePhoto = (e) => {
+        dispatch(createThunkSetPhoto(e.target.files[0], userId))
+    }
+
 
     if (isLoading) return <Loading/>
     if (!isAuth) return <Navigate to={'/login'}/>
 
     return (
         <div className={style.flex}>
-            <div>
+            <div className={style.imageContainer}>
                 <img className={style.userImage}
                      src={Object.entries(profileInfo).length !== 0 && profileInfo.photos.large !== null ? profileInfo.photos.large : userImage}
                      alt="photo"/>
+                {params['*'] === String(userId) && <input onChange={changePhoto} type="file"/>}
             </div>
             <div className={style.userInfo}>
                 <Status/>
@@ -52,11 +62,11 @@ function Profile() {
                     <div className={style.infoItems} onClick={() => setAccordionState(!accordionState)}>contacts:</div>
                     {accordionState &&
                         <div className={style.accordItemsBlock}>
-                            {Object.keys(profileInfo.contacts).map(key => <div
+                            {Object.keys(profileInfo.contacts).map(key => <div key={key}
                                 className={style.infoItemsAccord}>{profileInfo.contacts[key]}</div>)}
                         </div>}
                 </div> : <EditForm/>}
-                <button onClick={() => setEditMode(!editMode)}>Edit profile</button>
+                {params['*'] === String(userId) && <button onClick={() => setEditMode(!editMode)}>Edit profile info</button>}
             </div>
         </div>
     );

@@ -11,7 +11,6 @@ const Search = (props) => {
     const displayedUsersCount = useAppSelector(state => state.users.displayedUsersCount)
     const currentPage = useAppSelector(state => state.users.currentPage)
 
-
     const dispatch = useAppDispatch()
 
     return (
