@@ -1,4 +1,5 @@
 import axios from "axios";
+import {createThunkGetCaptcha} from "../redux-toolkit/reducers/authReducer";
 
 const instance = axios.create({
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
@@ -36,9 +37,9 @@ export const API = {
             return response.data
         })
     },
-    authorizeUser({email, password, rememberMe}) {
+    authorizeUser({email, password, rememberMe, captcha}) {
         return instance.post(`auth/login`, {
-            email, password, rememberMe
+            email, password, rememberMe, captcha
         }).then((response) => {
             return response.data.resultCode
         })
@@ -67,5 +68,9 @@ export const API = {
     unfollow(userId) {
         return instance.delete(`/follow/${userId}`)
             .then((response) => response.data.resultCode)
+    },
+    getCaptcha() {
+        return instance.get(`security/get-captcha-url`)
+            .then((response) => response.data.url)
     }
 }

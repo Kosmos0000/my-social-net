@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c1de149-922d-44a4-b462-0477b4e89537" name="Changes" comment="added the ability to set a photo">
-      <change afterPath="$PROJECT_DIR$/src/components/common/search/search.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/editProfileForm/editProfileForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/editProfileForm/editProfileForm.module.css" afterDir="false" />
+    <list default="true" id="1c1de149-922d-44a4-b462-0477b4e89537" name="Changes" comment="added possibility followed and unfollowed users">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/pagination/pagination.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/pagination/pagination.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/pagination/pagination.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/pagination/pagination.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/search/search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/search/search.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/status/status.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/status/status.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/login/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/login/login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/login/login.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/login/login.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux-toolkit/reducers/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux-toolkit/reducers/usersReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux-toolkit/reducers/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux-toolkit/reducers/authReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +109,7 @@
       <workItem from="1668530399883" duration="5732000" />
       <workItem from="1668668693367" duration="4236000" />
       <workItem from="1668691208117" duration="2788000" />
-      <workItem from="1668773252390" duration="3209000" />
+      <workItem from="1668773252390" duration="7178000" />
     </task>
     <task id="LOCAL-00001" summary="create react-app redux, added header and sidebar">
       <created>1666890549749</created>
@@ -160,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668451594505</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added possibility followed and unfollowed users">
+      <created>1668776752689</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1668776752689</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +183,7 @@
     <MESSAGE value="added users" />
     <MESSAGE value="added users, search and pagination" />
     <MESSAGE value="added the ability to set a photo" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the ability to set a photo" />
+    <MESSAGE value="added possibility followed and unfollowed users" />
+    <option name="LAST_COMMIT_MESSAGE" value="added possibility followed and unfollowed users" />
   </component>
 </project>

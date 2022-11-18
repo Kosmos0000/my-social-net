@@ -1,7 +1,7 @@
 .form {
     color: #F2D46A;
 }
-.form div {
+.field {
     margin: 0 0 15px 0;
     max-width: 280px;
     display: flex;
@@ -13,4 +13,11 @@
     background: #3C3F41;
     border: none;
     padding: 10px;
+}
+.captcha div {
+    max-width: 175px;
+    line-height: 30px;
+}.captcha img {
+    max-width: 100%;
+    margin: 20px 0;
 }
