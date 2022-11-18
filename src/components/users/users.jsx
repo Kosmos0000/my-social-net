@@ -1,5 +1,9 @@
 import React, {useEffect} from 'react';
-import {createThunkGetUsers} from "../../redux-toolkit/reducers/usersReducer";
+import {
+    createThunkFollow,
+    createThunkGetUsers,
+    createThunkSetSubscriptionInfo, createThunkUnfollow
+} from "../../redux-toolkit/reducers/usersReducer";
 import userImage from './../../common-images/user.png'
 import style from './users.module.css'
 import {NavLink} from "react-router-dom";
@@ -12,7 +16,6 @@ function Users() {
     const dispatch = useAppDispatch()
 
 
-
     const usersTotalCount = useAppSelector((state) => state.users.usersTotalCount)
     const displayedUsersCount = useAppSelector((state) => state.users.displayedUsersCount)
     const currentPage = useAppSelector((state) => state.users.currentPage)
@@ -21,14 +24,15 @@ function Users() {
     const currentStringForSearch = useAppSelector(state => state.search.currentStringForSearch)
 
 
+
     useEffect(() => {
-        dispatch(createThunkGetUsers(displayedUsersCount, currentPage))
+        dispatch(createThunkGetUsers(displayedUsersCount, currentPage, currentStringForSearch))
     }, [])
 
 
     const users = items.map((user) =>
-        <div key={user.id}>
-            <div className={style.user}>
+        <div key={user.id} className={style.user}>
+            <div className={style.flex}>
                 <NavLink to={`../profile/${user.id}`} className={style.photo}>
                     {user.photos.small ?
                         <img src={user.photos.small} alt=""/> :
@@ -40,6 +44,7 @@ function Users() {
                     <div className={style.status}>{user.status}</div>
                 </div>
             </div>
+                <button onClick={() => user.followed ? dispatch(createThunkUnfollow(user.id)) : dispatch(createThunkFollow(user.id))} className={style.followed}>{user.followed ? 'unfollow' : 'follow'}</button>
         </div>
     )
 
@@ -47,7 +52,8 @@ function Users() {
         <div>
             <Search/>
             <Pagination totalCount={usersTotalCount} displayedAmount={displayedUsersCount}
-                        currentPage={currentPage} action={createThunkGetUsers} currentStringForSearch={currentStringForSearch}/>
+                        currentPage={currentPage} action={createThunkGetUsers}
+                        currentStringForSearch={currentStringForSearch}/>
             {isLoading ? <Loading/> :
                 <div>{users}</div>}
 

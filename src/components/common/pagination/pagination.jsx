@@ -3,8 +3,10 @@ import style from "./pagination.module.css";
 import {useSelector} from "react-redux";
 import {useAppDispatch, useAppSelector} from "../../../redux-toolkit/redux-toolkit";
 import {createThunkGetUsers, setCurrentPage, setPage} from "../../../redux-toolkit/reducers/usersReducer";
+import {NavLink, useParams} from "react-router-dom";
 
 const Pagination = ({totalCount, displayedAmount, currentPage, action, currentStringForSearch}) => {
+
 
     const dispatch = useAppDispatch()
 
@@ -18,10 +20,11 @@ const Pagination = ({totalCount, displayedAmount, currentPage, action, currentSt
         dispatch(action(displayedAmount, newPage, currentStringForSearch))
     }
 
-    const pages = numberOfDisplayedPages.map((page) => <span key={page} onClick={() => goToAnotherPage(page)}
-                                                           className={currentPage === page ?
-                                                               style.page + ' ' + style.active :
-                                                               style.page}>{page}</span>
+    const pages = numberOfDisplayedPages.map((page) => <span key={page} onClick={() => goToAnotherPage(page)}>
+        <NavLink className={currentPage === page ?
+            style.page + ' ' + style.active :
+            style.page} to={`?count=${displayedAmount}&page=${page}`}>{page}</NavLink>
+    </span>
     )
 
     return (

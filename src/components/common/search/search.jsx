@@ -4,6 +4,8 @@ import {Field, Form, Formik} from "formik";
 import {createThunkGetUsers} from "../../../redux-toolkit/reducers/usersReducer";
 import {useAppDispatch, useAppSelector} from "../../../redux-toolkit/redux-toolkit";
 import {changeCurrentStringForSearch} from "../../../redux-toolkit/reducers/searchReducer";
+import style from "./search.module.css";
+import {NavLink} from "react-router-dom";
 
 const Search = (props) => {
 
@@ -14,9 +16,9 @@ const Search = (props) => {
     const dispatch = useAppDispatch()
 
     return (
-        <div>
+        <div className={style.search}>
             <input type="text" onChange={(e) => dispatch(changeCurrentStringForSearch(e.target.value))} value={currentStringForSearch}/>
-            <button onClick={() => dispatch(createThunkGetUsers(displayedUsersCount, currentPage, currentStringForSearch))} >Find</button>
+            <button onClick={() => dispatch(createThunkGetUsers(displayedUsersCount, 1, currentStringForSearch))} ><NavLink to={`?count=${displayedUsersCount}&page=${currentPage}&term=${currentStringForSearch}`}>Find</NavLink></button>
         </div>
     );
 };

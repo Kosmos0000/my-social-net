@@ -6,9 +6,10 @@ const initialState = {
     usersTotalCount: null,
     displayedUsersCount: 100,
     currentPage: 1,
-    status: null,
+    status: '',
     profileInfo: {},
-    isLoading: false
+    isLoading: false,
+    subscribers: {}
 };
 
 export const usersSlice = createSlice({
@@ -32,6 +33,24 @@ export const usersSlice = createSlice({
         },
         isLoading: (state, action) => {
             state.isLoading = action.payload
+        },
+        follow: (state, action) => {
+            state.items = state.items.map(user => {
+                if (user.id === action.payload) {
+                    return {...user, followed: true}
+                } else {
+                    return user
+                }
+            })
+        },
+        unfollow: (state, action) => {
+            state.items = state.items.map(user => {
+                if (user.id === action.payload) {
+                    return {...user, followed: false}
+                } else {
+                    return user
+                }
+            })
         },
     },
 })
@@ -62,17 +81,27 @@ export const createThunkGetProfileInfo = (userId) => async (dispatch) => {
     dispatch(isLoading(false))
 }
 export const createThunkSendProfileForm = (data, userId) => async (dispatch) => {
-    dispatch(isLoading(true))
     await API.sendProfileForm(data)
     dispatch(createThunkGetProfileInfo(userId))
-    dispatch(isLoading(false))
 }
 export const createThunkSetPhoto = (photo, userId) => async (dispatch) => {
     await API.setPhoto(photo)
     dispatch(createThunkGetProfileInfo(userId))
 }
+export const createThunkFollow = (userId) => async (dispatch) => {
+    const resultCode = await API.follow(userId)
+    if (!resultCode) {
+        dispatch(follow(userId))
+    }
+}
+export const createThunkUnfollow = (userId) => async (dispatch) => {
+    const resultCode = await API.unfollow(userId)
+    if (!resultCode) {
+        dispatch(unfollow(userId))
+    }
+}
 
 
-export const {setUsers, setTotalUsersCount, setCurrentPage, setStatus, setProfileInfo, isLoading} = usersSlice.actions
+export const {setUsers, setTotalUsersCount, setCurrentPage, setStatus, setProfileInfo, isLoading, follow, unfollow} = usersSlice.actions
 
 export default usersSlice.reducer

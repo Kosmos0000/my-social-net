@@ -4,14 +4,12 @@ import style from './profile.module.css'
 import {Navigate, useParams} from "react-router-dom";
 import {
     createThunkGetProfileInfo,
-    createThunkSendProfileForm,
     createThunkSetPhoto
 } from "../../redux-toolkit/reducers/usersReducer";
 import Loading from "../common/loading/loading";
 import Status from "../common/status/status";
 import {useAppDispatch, useAppSelector} from "../../redux-toolkit/redux-toolkit";
-import {createThunkAuthorizeUser} from "../../redux-toolkit/reducers/authReducer";
-import {ErrorMessage, Field, Form, Formik} from "formik";
+import EditProfileForm from "./editProfileForm/editProfileForm";
 
 function Profile() {
     let params = useParams();
@@ -35,10 +33,6 @@ function Profile() {
         }
     }, [params])
 
-    const changePhoto = (e) => {
-        dispatch(createThunkSetPhoto(e.target.files[0], userId))
-    }
-
 
     if (isLoading) return <Loading/>
     if (!isAuth) return <Navigate to={'/login'}/>
@@ -49,7 +43,7 @@ function Profile() {
                 <img className={style.userImage}
                      src={Object.entries(profileInfo).length !== 0 && profileInfo.photos.large !== null ? profileInfo.photos.large : userImage}
                      alt="photo"/>
-                {params['*'] === String(userId) && <input onChange={changePhoto} type="file"/>}
+                {params['*'] === String(userId) && <input onChange={(e) => dispatch(createThunkSetPhoto(e.target.files[0], userId))} type="file"/>}
             </div>
             <div className={style.userInfo}>
                 <Status/>
@@ -63,41 +57,14 @@ function Profile() {
                     {accordionState &&
                         <div className={style.accordItemsBlock}>
                             {Object.keys(profileInfo.contacts).map(key => <div key={key}
-                                className={style.infoItemsAccord}>{profileInfo.contacts[key]}</div>)}
+                                                                               className={style.infoItemsAccord}>{profileInfo.contacts[key]}</div>)}
                         </div>}
-                </div> : <EditForm/>}
-                {params['*'] === String(userId) && <button onClick={() => setEditMode(!editMode)}>Edit profile info</button>}
+                </div> : <EditProfileForm/>}
+                {params['*'] === String(userId) &&
+                    <button onClick={() => setEditMode(!editMode)}>Edit profile info</button>}
             </div>
         </div>
     );
 }
-
-const EditForm = () => {
-
-    const dispatch = useAppDispatch();
-
-    const profileInfo = useAppSelector(state => state.users.profileInfo)
-
-    return (
-        <div>
-            <Formik
-                initialValues={profileInfo}
-                onSubmit={(values) => {
-                    debugger
-                    dispatch(createThunkSendProfileForm(values, profileInfo.userId))
-                }}
-            >
-                <Form>
-                    {Object.keys(profileInfo).map(key => {
-                        if(key !== 'userId' && key !== 'contacts' && key !== 'photos') {
-                            return <div key={key}>{key}: <Field type={typeof profileInfo[key] == 'boolean' ? 'checkbox' : 'text'} name={key}/></div>
-                        }
-                        })}
-                    <button type="submit">Send</button>
-                </Form>
-            </Formik>
-        </div>
-    );
-};
 
 export default Profile;
