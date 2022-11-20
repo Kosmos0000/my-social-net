@@ -3,13 +3,15 @@ import usersReducer from "./reducers/usersReducer";
 import authReducer from "./reducers/authReducer";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import searchReducer from "./reducers/searchReducer";
+import dialogsReducer from "./reducers/dialogsReducer";
 
 
 export const store = configureStore({
     reducer: {
         users: usersReducer,
         auth: authReducer,
-        search: searchReducer
+        search: searchReducer,
+        dialogs: dialogsReducer,
     }
 })
 

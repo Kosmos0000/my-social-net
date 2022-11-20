@@ -1,0 +1,47 @@
+.dialog {
+    display: flex;
+    padding: 10px 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.dialog:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #00AFB2;
+}
+.dialog:last-child:after {
+    display: none;
+}
+.userPhoto {
+    max-width: 50px;
+    margin: 0 10px 0 0;
+}
+.userPhoto img {
+    max-width: 100%;
+}
+.name {
+    color: #fff;
+}
+
+.listMessages {
+    min-height: 400px;
+    background: rgba(204, 228, 247, 0.1);
+    margin: 0 0 15px 0;
+}
+.messages {
+    color: #FD9300;
+    padding: 10px;
+}
+.back {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: #7FFF00;
+    margin: 0 0 10px 0;
+    cursor: pointer;
+}

@@ -12,7 +12,7 @@ function Sidebar() {
         <div className={style.sidebar}>
             <NavLink to={`profile/${userId || ''}`} className={style.text}>Profile</NavLink>
             <NavLink to={`users`} className={style.text}>Users</NavLink>
-            <div className={style.text}>Messages</div>
+            <NavLink to={`dialogs`} className={style.text}>Dialogs</NavLink>
         </div>
     );
 }

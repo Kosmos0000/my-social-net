@@ -9,7 +9,6 @@ const instance = axios.create({
     }
 })
 
-
 export const API = {
     getUsers(displayedUsersCount, page, userName) {
         return instance.get(`users?count=${displayedUsersCount}&page=${page}&term=${userName}`)
@@ -72,5 +71,23 @@ export const API = {
     getCaptcha() {
         return instance.get(`security/get-captcha-url`)
             .then((response) => response.data.url)
+    },
+    dialogs: {
+        getAllDialogs() {
+            return instance.get(`dialogs`)
+                .then((response) => response.data)
+        },
+        startChatting(userId) {
+            return instance.put(`dialogs/${userId}`)
+                .then((response) => response.data.resultCode)
+        },
+        getListMessages(userId, page, count) { //get list of messages with your friend
+            return instance.get(`dialogs/${userId}/messages?page=${page}&count=${count}`)
+                .then((response) => response.data)
+        },
+        sendMessage(userId, message) {
+            return instance.post(`dialogs/${userId}/messages`, {body: message})
+                .then((response) => response.data)
+        },
     }
 }

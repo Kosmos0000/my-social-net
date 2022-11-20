@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c1de149-922d-44a4-b462-0477b4e89537" name="Changes" comment="added possibility followed and unfollowed users">
+    <list default="true" id="1c1de149-922d-44a4-b462-0477b4e89537" name="Changes" comment="added login captcha">
+      <change afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux-toolkit/reducers/dialogsReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/login/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/login/login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/login/login.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/login/login.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux-toolkit/reducers/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux-toolkit/reducers/authReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux-toolkit/redux-toolkit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux-toolkit/redux-toolkit.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +36,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/my-social-net/my-social-net/src/components/common/search&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/my-social-net/my-social-net/src/redux-toolkit/reducers&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs.jest.jest_package&quot;: &quot;D:/my-social-net/my-social-net/node_modules/react-scripts&quot;,
@@ -44,8 +47,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\my-social-net\my-social-net\src\components\common\search" />
       <recent name="D:\my-social-net\my-social-net\src\redux-toolkit\reducers" />
+      <recent name="D:\my-social-net\my-social-net\src\components\common\search" />
       <recent name="D:\my-social-net\my-social-net\src\components\common\login" />
     </key>
   </component>
@@ -109,7 +112,9 @@
       <workItem from="1668530399883" duration="5732000" />
       <workItem from="1668668693367" duration="4236000" />
       <workItem from="1668691208117" duration="2788000" />
-      <workItem from="1668773252390" duration="7178000" />
+      <workItem from="1668773252390" duration="7272000" />
+      <workItem from="1668866243134" duration="15360000" />
+      <workItem from="1668963503084" duration="3299000" />
     </task>
     <task id="LOCAL-00001" summary="create react-app redux, added header and sidebar">
       <created>1666890549749</created>
@@ -160,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668776752689</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added login captcha">
+      <created>1668781393201</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1668781393201</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +196,7 @@
     <MESSAGE value="added users, search and pagination" />
     <MESSAGE value="added the ability to set a photo" />
     <MESSAGE value="added possibility followed and unfollowed users" />
-    <option name="LAST_COMMIT_MESSAGE" value="added possibility followed and unfollowed users" />
+    <MESSAGE value="added login captcha" />
+    <option name="LAST_COMMIT_MESSAGE" value="added login captcha" />
   </component>
 </project>

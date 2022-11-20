@@ -9,6 +9,7 @@ import {useDispatch} from "react-redux";
 import {createThunkGetDataAuthMe} from "./redux-toolkit/reducers/authReducer";
 import Loading from "./components/common/loading/loading";
 import Login from "./components/common/login/login";
+import Dialogs from "./components/dialogs/dialogs";
 
 function App() {
 
@@ -32,6 +33,8 @@ function App() {
                                 <Route path="users" element={<Users />} />
                                 <Route path="profile/*" element={<Profile />} />
                                 <Route path="login" element={<Login />} />
+                                <Route path="dialogs/*" element={<Dialogs />} />
+                                <Route path="dialogs/*/messages" element={<Dialogs />} />
                             </Routes>
                         </div>
                     </div>
