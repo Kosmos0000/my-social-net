@@ -31,17 +31,19 @@ export const createThunkGetAllDialogs = () => async (dispatch) => {
     const data = await API.dialogs.getAllDialogs()
     dispatch(setAllDialogs(data))
 }
-export const createThunkStartChatting = (userId, page, count) => async (dispatch) => {
+export const createThunkStartChatting = (userId) => async (dispatch) => {
     const resultCode = await API.dialogs.startChatting(userId)
     if (!resultCode) {
         dispatch(setIsSendMessage(true))
-        createThunkGetListMessages(userId, page, count)
+        dispatch(createThunkGetAllDialogs())
     }
 
 }
 export const createThunkGetListMessages = (userId, page, count) => async (dispatch) => {
     const data = await API.dialogs.getListMessages(userId, page, count)
+    debugger
     if (!data.resultCode) {
+        dispatch(createThunkStartChatting(userId))
         dispatch(setListMessages(data.items))
         dispatch(setIsSendMessage(true))
     }
@@ -51,7 +53,12 @@ export const createThunkSendMessage = (userId, message, page, count) => async (d
     if (!data.resultCode) {
         dispatch(createThunkGetListMessages(userId, page, count))
     }
-
+}
+export const createThunkGetInfoAboutViewedMessage = (userId, message, page, count) => async (dispatch) => {
+    const data = await API.dialogs.sendMessage(userId, message)
+    if (!data.resultCode) {
+        dispatch(createThunkGetListMessages(userId, page, count))
+    }
 }
 
 

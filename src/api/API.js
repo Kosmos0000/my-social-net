@@ -89,5 +89,9 @@ export const API = {
             return instance.post(`dialogs/${userId}/messages`, {body: message})
                 .then((response) => response.data)
         },
+        getInfoAboutViewedMessage(messageId) {
+            return instance.get(`dialogs/messages/${messageId}/viewed`)
+                .then((response) => response.data)
+        },
     }
 }

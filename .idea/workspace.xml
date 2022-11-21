@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c1de149-922d-44a4-b462-0477b4e89537" name="Changes" comment="added login captcha">
-      <change afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux-toolkit/reducers/dialogsReducer.js" afterDir="false" />
+    <list default="true" id="1c1de149-922d-44a4-b462-0477b4e89537" name="Changes" comment="added possibility send messages and get messages">
+      <change afterPath="$PROJECT_DIR$/src/components/dialogs/conversation/conversation.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/dialogs/conversation/conversation.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/API.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogs.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sidebar/sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux-toolkit/redux-toolkit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux-toolkit/redux-toolkit.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux-toolkit/reducers/dialogsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux-toolkit/reducers/dialogsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux-toolkit/reducers/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux-toolkit/reducers/usersReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +115,8 @@
       <workItem from="1668691208117" duration="2788000" />
       <workItem from="1668773252390" duration="7272000" />
       <workItem from="1668866243134" duration="15360000" />
-      <workItem from="1668963503084" duration="3299000" />
+      <workItem from="1668963503084" duration="3831000" />
+      <workItem from="1669017648593" duration="4816000" />
     </task>
     <task id="LOCAL-00001" summary="create react-app redux, added header and sidebar">
       <created>1666890549749</created>
@@ -172,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668781393201</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added possibility send messages and get messages">
+      <created>1668967298891</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1668967298891</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +206,7 @@
     <MESSAGE value="added the ability to set a photo" />
     <MESSAGE value="added possibility followed and unfollowed users" />
     <MESSAGE value="added login captcha" />
-    <option name="LAST_COMMIT_MESSAGE" value="added login captcha" />
+    <MESSAGE value="added possibility send messages and get messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="added possibility send messages and get messages" />
   </component>
 </project>

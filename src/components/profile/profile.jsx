@@ -10,7 +10,7 @@ import Loading from "../common/loading/loading";
 import Status from "../common/status/status";
 import {useAppDispatch, useAppSelector} from "../../redux-toolkit/redux-toolkit";
 import EditProfileForm from "./editProfileForm/editProfileForm";
-import {createThunkStartChatting} from "../../redux-toolkit/reducers/dialogsReducer";
+import {setIsSendMessage} from "../../redux-toolkit/reducers/dialogsReducer";
 
 function Profile() {
     let params = useParams();
@@ -19,9 +19,6 @@ function Profile() {
     const userId = useAppSelector(state => state.auth.data.id)
     const profileInfo = useAppSelector((state) => state.users.profileInfo)
     const isLoading = useAppSelector((state) => state.users.isLoading)
-    const page = useAppSelector((state) => state.dialogs.page)
-    const count = useAppSelector((state) => state.dialogs.count)
-
 
     const [accordionState, setAccordionState] = useState(false)
     const [editMode, setEditMode] = useState(false)
@@ -65,7 +62,7 @@ function Profile() {
                 </div> : <EditProfileForm/>}
                 {params['*'] === String(userId) &&
                     <button onClick={() => setEditMode(!editMode)}>Edit profile info</button>}
-                <div><NavLink onClick={() => dispatch(createThunkStartChatting(+params['*'], page, count))} to={`/dialogs/${+params['*']}/messages`}>Start a dialog</NavLink></div>
+                <div><NavLink onClick={() => dispatch(setIsSendMessage(true))} to={`/dialogs/${+params['*']}`}>Start a dialog</NavLink></div>
             </div>
         </div>
     );

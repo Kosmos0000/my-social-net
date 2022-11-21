@@ -4,7 +4,7 @@ import {createSlice} from "@reduxjs/toolkit";
 const initialState = {
     items: [],
     usersTotalCount: null,
-    displayedUsersCount: 100,
+    displayedUsersCount: 50,
     currentPage: 1,
     status: '',
     profileInfo: {},

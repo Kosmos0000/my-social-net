@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {
     createThunkFollow,
     createThunkGetUsers,
-    createThunkSetSubscriptionInfo, createThunkUnfollow
+    createThunkUnfollow
 } from "../../redux-toolkit/reducers/usersReducer";
 import userImage from './../../common-images/user.png'
 import style from './users.module.css'
@@ -59,7 +59,6 @@ function Users() {
                         currentStringForSearch={currentStringForSearch}/>
             {isLoading ? <Loading/> :
                 <div>{users}</div>}
-
         </div>
     );
 }
